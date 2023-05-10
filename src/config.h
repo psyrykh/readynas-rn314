@@ -1,9 +1,9 @@
-#ifndef RNDU4000_CONFIG_HEADER
-#define RNDU4000_CONFIG_HEADER
+#ifndef RN314_CONFIG_HEADER
+#define RN314_CONFIG_HEADER
 
-// LPC page 534 of doc/ich9
+// LPC page 534 of doc/ich10
 #define LPC_VENDOR_ID       0x8086
-#define LPC_DEVICE_ID       0x2918
+#define LPC_DEVICE_ID       0x3a18
 #define LPC_GPIO_REGISTERS_IO_BASE_ADDR  0x48
 #define LPC_GPIO_REGISTERS_MEM_SIZE      64
 #define LPC_GPIO_USE_SEL   0x00 // 0 : Use as native func, 1 : Use a gpio
@@ -44,4 +44,4 @@
 #define LCD_GPIO_PIN_D7     7
 #define LCD_GPIO_PIN_BL    16
 
-#endif
+#endif // RN314_CONFIG_HEADER

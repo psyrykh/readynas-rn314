@@ -1,6 +1,6 @@
-# rndu4000, a linux kernel module to control lcd, leds and buttons of Netgear Readynas Ultra 4.
+# RN314, a linux kernel module to control lcd, leds and buttons of Netgear Readynas RN314.
 
-I have installed a fresh new debian on my Netgear Ready Nas Ultra 4 and the lcd panel keep lighting so i decided to rewrite the kernel module to control lcd, buttons and leds.
+I have installed a fresh new debian on my Netgear Ready RN314 and the lcd panel keep lighting so i decided to rewrite the kernel module to control lcd, buttons and leds.
 Before you try it, i **STRONGLY** encourage you to unmount your raid. It work well on my nas, but well we never know.
 
 Please note that i have nothing to do with Netgear.
@@ -8,7 +8,7 @@ Please note that i have nothing to do with Netgear.
 
 # Requirements
 
-![Netgear Readynas Ultra 4 (RNDU4000)](doc/rndu4000.jpg)
+![Netgear Readynas RN314](doc/rn314.jpg)
 
 
  Check your nas
@@ -31,7 +31,7 @@ System Information
 ```
 
 ```bash
-root@nas:~# lspci -d 0x8086:0x2918
+root@nas:~# lspci -d 0x8086:0x3a18
 00:1f.0 ISA bridge: Intel Corporation 82801IB (ICH9) LPC Interface Controller (rev 02)
 ```
 
@@ -65,12 +65,12 @@ Each led can be constrolled by the following sysfs files :
 
 |  File                                 | Description              |
 |---------------------------------------|--------------------------|
-| /sys/devices/rndu4000/leds/backup     | Led of the backup button |
-| /sys/devices/rndu4000/leds/power      | Led of power button      |
-| /sys/devices/rndu4000/leds/disk1      | Led of disk 1            |
-| /sys/devices/rndu4000/leds/disk2      | Led of disk 2            |
-| /sys/devices/rndu4000/leds/disk3      | Led of disk 3            |
-| /sys/devices/rndu4000/leds/disk4      | Led of disk 4            |
+| /sys/devices/rn314/leds/backup        | Led of the backup button |
+| /sys/devices/rn314/leds/power         | Led of power button      |
+| /sys/devices/rn314/leds/disk1         | Led of disk 1            |
+| /sys/devices/rn314/leds/disk2         | Led of disk 2            |
+| /sys/devices/rn314/leds/disk3         | Led of disk 3            |
+| /sys/devices/rn314/leds/disk4         | Led of disk 4            |
 
 
 Acceptable values are :
@@ -87,8 +87,8 @@ Acceptable values are :
 ## Example
 
 ```bash
-root@nas:~# echo 2 > /sys/devices/rndu4000/leds/backup
-root@nas:~# cat /sys/devices/rndu4000/leds/backup
+root@nas:~# echo 2 > /sys/devices/rn314/leds/backup
+root@nas:~# cat /sys/devices/rn314/leds/backup
 2
 root@nas:~#
 ```
@@ -100,7 +100,7 @@ Lcd panel is 16x2 characters.
 
 |  File                                     | Description                            |
 |-------------------------------------------|----------------------------------------|
-| /sys/devices/rndu4000/lcd/backlight       | Enable/Disable Backlight of lcd panel  |
+| /sys/devices/rn314/lcd/backlight          | Enable/Disable Backlight of lcd panel  |
 | /dev/lcd                                  | Character device to write text on lcd  |
 
 
@@ -131,14 +131,14 @@ Buttons can be configured to launch command
 
 |  File                                         | Description                                            |
 |-----------------------------------------------|--------------------------------------------------------|
-| /sys/devices/rndu4000/buttons/backup_cmdline  | Command will be executed when backup button is pressed |
-| /sys/devices/rndu4000/buttons/reset_cmdline   | Command will be executed when reset button is pressed  |
+| /sys/devices/rn314/buttons/backup_cmdline     | Command will be executed when backup button is pressed |
+| /sys/devices/rn314/buttons/reset_cmdline      | Command will be executed when reset button is pressed  |
 
 
 ## Example
 
 ```bash
-root@nas:~# echo -n 'logger "Button backup has been pressed"' > /sys/devices/rndu4000/buttons/backup_cmdline
-root@nas:~# cat /sys/devices/rndu4000/buttons/backup_cmdline
+root@nas:~# echo -n 'logger "Button backup has been pressed"' > /sys/devices/rn314/buttons/backup_cmdline
+root@nas:~# cat /sys/devices/rn314/buttons/backup_cmdline
 logger "Button backup has been pressed"
 ```

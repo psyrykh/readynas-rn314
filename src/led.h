@@ -1,5 +1,5 @@
-#ifndef RNDU4000_LED_HEADER
-#define RNDU4000_LED_HEADER
+#ifndef rn314_LED_HEADER
+#define rn314_LED_HEADER
 
 
 #include <linux/kconfig.h>

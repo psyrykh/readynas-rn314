@@ -1,5 +1,5 @@
-obj-m += rndu4000.o
-rndu4000-objs := lcd.o led.o buttons.o module.o
+obj-m += rn314.o
+rn314-objs := lcd.o led.o buttons.o module.o
 
 
 PWD := $(CURDIR)

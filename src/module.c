@@ -19,7 +19,7 @@
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("fmor");
-MODULE_DESCRIPTION("Control leds and lcd panel of Netgear Readynas RNDU4000");
+MODULE_DESCRIPTION("Control leds and lcd panel of Netgear Readynas rn314");
 MODULE_VERSION( "1.0.0" );
 
 
@@ -29,7 +29,7 @@ static struct Context ctx =
         .lock = __SPIN_LOCK_UNLOCKED( lock ),
 };
 
-static int __init rndu4000_init( void )
+static int __init rn314_init( void )
 {
     int r;
 
@@ -132,7 +132,7 @@ LBL_FAILED_PCI_GET_DEVICE:
 }
 
 
-static void __exit rndu4000_exit( void )
+static void __exit rn314_exit( void )
 {
     pr_debug( "%s :  Unloading\n", THIS_MODULE->name );
 
@@ -154,8 +154,8 @@ static void __exit rndu4000_exit( void )
     pr_info("%s : Unloaded\n", THIS_MODULE->name );
 }
 
-module_init( rndu4000_init );
-module_exit( rndu4000_exit );
+module_init( rn314_init );
+module_exit( rn314_exit );
 
 
 

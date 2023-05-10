@@ -1,5 +1,5 @@
-#ifndef RNDU400_BUTTONS_HEADERS
-#define RNDU400_BUTTONS_HEADERS
+#ifndef RN314_BUTTONS_HEADERS
+#define RN314_BUTTONS_HEADERS
 
 #include <linux/kconfig.h>
 #include <linux/compiler_types.h>
@@ -24,4 +24,4 @@ void buttons_check_timer_callback( struct timer_list* t );
 void button_work_cmd( struct work_struct* work );
 
 
-#endif
+#endif // RN314_BUTTONS_HEADERS

@@ -151,19 +151,19 @@ int  buttons_sysfs_init( void )
 {
     int r;
 
-    // /sys/devices/rndu4000/buttons
+    // /sys/devices/rn314/buttons
     sysfs_buttons = kobject_create_and_add( "buttons", &ctx->device->kobj );
     if( sysfs_buttons == NULL )
         goto LBL_FAILED_CREATE_BUTTONS;
 
 
-    // /sys/devices/rndu4000/backup_cmdline
+    // /sys/devices/rn314/backup_cmdline
     r = sysfs_create_file( sysfs_buttons, &sysfs_backup_cmdline_attr.attr );
     if( r != 0 )
         goto LBL_FAILED_BACKUP_CMDLINE;
 
 
-    // /sys/devices/rndu4000/reset_cmdline
+    // /sys/devices/rn314/reset_cmdline
     r = sysfs_create_file( sysfs_buttons, &sysfs_reset_cmdline_attr.attr );
     if( r != 0 )
         goto LBL_FAILED_RESET_CMDLINE;

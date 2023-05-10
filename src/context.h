@@ -1,5 +1,5 @@
-#ifndef RNDU4000_CONTEXT_HEADER
-#define RNDU4000_CONTEXT_HEADER
+#ifndef RN314_CONTEXT_HEADER
+#define RN314_CONTEXT_HEADER
 
 #include <linux/kconfig.h>
 #include <linux/compiler_types.h>
@@ -29,4 +29,4 @@ struct Context
 };
 
 
-#endif
+#endif // RN314_CONTEXT_HEADER

@@ -12,16 +12,16 @@ clean:
 
 
 load:
-	rmmod -f  rndu4000 || true
+	rmmod -f  rn314 || true
 	dmesg -C
-	insmod build/local__debug/rndu4000.ko || insmod build/rndu4000.ko
+	insmod build/local__debug/rn314.ko || insmod build/rn314.ko
 	dmesg
 	@echo " "
-	ls -l /sys/devices/rndu4000
+	ls -l /sys/devices/rn314
 	@echo " "
-	ls -l /sys/devices/rndu4000/lcd
+	ls -l /sys/devices/rn314/lcd
 	@echo " "
-	ls -l /sys/devices/rndu4000/leds
+	ls -l /sys/devices/rn314/leds
 	@echo " "
 	cat /proc/devices | grep lcd
 	@echo " "
@@ -31,32 +31,32 @@ load:
 
 
 unload:
-	rmmod -f rndu4000
+	rmmod -f rn314
 	dmesg
 
 led_on:
-	echo 1 > /sys/devices/rndu4000/leds/backup
-	echo 1 > /sys/devices/rndu4000/leds/power
-	echo 1 > /sys/devices/rndu4000/leds/disk1
-	echo 1 > /sys/devices/rndu4000/leds/disk2
-	echo 1 > /sys/devices/rndu4000/leds/disk3
-	echo 1 > /sys/devices/rndu4000/leds/disk4
+	echo 1 > /sys/devices/rn314/leds/backup
+	echo 1 > /sys/devices/rn314/leds/power
+	echo 1 > /sys/devices/rn314/leds/disk1
+	echo 1 > /sys/devices/rn314/leds/disk2
+	echo 1 > /sys/devices/rn314/leds/disk3
+	echo 1 > /sys/devices/rn314/leds/disk4
 
 led_blinks:
-	echo 2 > /sys/devices/rndu4000/leds/backup
-	echo 2 > /sys/devices/rndu4000/leds/power
-	echo 2 > /sys/devices/rndu4000/leds/disk1
-	echo 2 > /sys/devices/rndu4000/leds/disk2
-	echo 2 > /sys/devices/rndu4000/leds/disk3
-	echo 2 > /sys/devices/rndu4000/leds/disk4
+	echo 2 > /sys/devices/rn314/leds/backup
+	echo 2 > /sys/devices/rn314/leds/power
+	echo 2 > /sys/devices/rn314/leds/disk1
+	echo 2 > /sys/devices/rn314/leds/disk2
+	echo 2 > /sys/devices/rn314/leds/disk3
+	echo 2 > /sys/devices/rn314/leds/disk4
 
 led_off:
-	echo 0 > /sys/devices/rndu4000/leds/backup
-	echo 0 > /sys/devices/rndu4000/leds/power
-	echo 0 > /sys/devices/rndu4000/leds/disk1
-	echo 0 > /sys/devices/rndu4000/leds/disk2
-	echo 0 > /sys/devices/rndu4000/leds/disk3
-	echo 0 > /sys/devices/rndu4000/leds/disk4
+	echo 0 > /sys/devices/rn314/leds/backup
+	echo 0 > /sys/devices/rn314/leds/power
+	echo 0 > /sys/devices/rn314/leds/disk1
+	echo 0 > /sys/devices/rn314/leds/disk2
+	echo 0 > /sys/devices/rn314/leds/disk3
+	echo 0 > /sys/devices/rn314/leds/disk4
 
 test_lcd:
 	@clear

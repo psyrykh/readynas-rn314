@@ -276,10 +276,10 @@ void lcd_sysfs_exit( void )
 {
     pr_debug( "%s/lcd : lcd_sysfs_exit", THIS_MODULE->name );
 
-    // /sys/devices/rndu4000/lcd/backlight
+    // /sys/devices/rn314/lcd/backlight
     sysfs_remove_file( k_lcd, &lcd_backlight_attr.attr );
 
-    // /sys/devices/rndu4000/lcd
+    // /sys/devices/rn314/lcd
     kobject_put( k_lcd );
     k_lcd = NULL;
 }

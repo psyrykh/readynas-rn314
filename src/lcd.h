@@ -1,5 +1,5 @@
-#ifndef RNDU4000_LCD_HEADER
-#define RNDU4000_LCD_HEADER
+#ifndef rn314_LCD_HEADER
+#define rn314_LCD_HEADER
 
 #include <linux/kconfig.h>
 #include <linux/compiler_types.h>
